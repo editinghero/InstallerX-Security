@@ -1,7 +1,8 @@
-# InstallerX: Elderly Protection Edition
+# 🛡️ InstallerX: Elderly Protection Edition (v1.0.0)
 
 <div align="center">
   <h1>Secure Your Device</h1>
+  <p><b>Package ID:</b> <code>com.editinghero.installer.elderly</code></p>
   <p>A specialized fork of <b>InstallerX-Revived</b> designed to protect elderly users from accidental or malicious app installations.</p>
 </div>
 
@@ -38,6 +39,16 @@ This app adds a critical layer of security for users who might find complex Andr
 
 ### 1. Download & Install
 Download the latest APK from the [Releases Page](https://github.com/editinghero/InstallerX-Security/releases). Install it on your Android device and grant all requested permissions.
+
+### Build on GitHub:
+This repo includes custom GitHub Actions for building your APKs:
+1. **Production Release Build:** (Recommended) Builds a small, optimized version of the app.
+2. **Elderly Debug Build:** Builds a debug version for quick testing.
+
+To build:
+1. Go to **Actions** in your GitHub repo.
+2. Select your desired workflow.
+3. Click **Run workflow**.
 
 ### 2. Configure the Profile
 To ensure the app works smoothly without constant prompts:

@@ -35,14 +35,14 @@ android {
         // If you use InstallerX source code, package it into apk or other installation package format
         // Please change the applicationId to one that does not conflict with any official release.
         applicationId = project.findProperty("APP_ID") as String?
-            ?: "com.rosan.installer.x.revived"
+            ?: "com.editinghero.installer.elderly"
         namespace = "com.rosan.installer"
         minSdk = 26
         targetSdk = 36
         // Version control
         // GitHub Actions will automatically use versionName A.B.C+1 when building preview releases
         // update versionCode and versionName before manually trigger a stable release
-        versionCode = 46
+        versionCode = 100
         versionName = project.findProperty("VERSION_NAME") as String?
             ?: project.findProperty("BASE_VERSION") as String
 
