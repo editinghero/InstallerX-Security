@@ -1,4 +1,4 @@
-# InstallerX-Security: Elderly Protection Edition
+# InstallerX-KilledAgain: Elderly Protection Edition
 
 <div align="center">
   <h1>Secure Your Device</h1>
