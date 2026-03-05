@@ -11,7 +11,7 @@
 
 This app adds a critical layer of security for users who might find complex Android prompts confusing. By adding a prominent **DANGER** warning and an **Admin Password Lock**, it ensures that no app is installed without intentional verification.
 
-### 🔑 Security Key
+### Security Key
 - **Default Password:** `?secure?`
 - *Note: This ensures that even if "Install" is clicked, the action is blocked until the passkey is entered.*
 
