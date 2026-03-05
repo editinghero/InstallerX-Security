@@ -1,7 +1,6 @@
 # InstallerX: Elderly Protection Edition
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/wxxsfxyzm/InstallerX-Revived/main/app/src/main/res/drawable/ic_launcher_foreground.xml" width="128" height="128" alt="Logo" />
   <h1>Secure Your Device</h1>
   <p>A specialized fork of <b>InstallerX-Revived</b> designed to protect elderly users from accidental or malicious app installations.</p>
 </div>
@@ -12,8 +11,8 @@
 
 This app adds a critical layer of security for users who might find complex Android prompts confusing. By adding a prominent **DANGER** warning and an **Admin Password Lock**, it ensures that no app is installed without intentional verification.
 
-### Security Key
-- **Default Password:** `admin123`
+### 🔑 Security Key
+- **Default Password:** `?secure?`
 - *Note: This ensures that even if "Install" is clicked, the action is blocked until the passkey is entered.*
 
 ---

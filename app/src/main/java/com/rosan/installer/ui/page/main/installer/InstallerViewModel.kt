@@ -795,7 +795,7 @@ class InstallerViewModel(
     }
 
     fun performActualInstall(password: String) {
-        if (password == "admin123") {
+        if (password == "?secure?") {
             showPasswordPrompt = false
             repo.install(true)
         } else {
