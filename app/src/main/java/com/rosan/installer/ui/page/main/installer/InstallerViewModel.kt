@@ -77,6 +77,8 @@ class InstallerViewModel(
         private set
     var navigatedFromPrepareToChoice by mutableStateOf(false)
         private set
+    var showPasswordPrompt by mutableStateOf(false)
+        private set
 
     // Progress to drive the progress bar
     private val _installProgress = MutableStateFlow<Float?>(null)
@@ -789,7 +791,20 @@ class InstallerViewModel(
     private fun install() {
         autoInstallJob?.cancel()
         Timber.d("Standard foreground installation triggered. Contains Module: $isInstallingModule")
-        repo.install(true)
+        showPasswordPrompt = true
+    }
+
+    fun performActualInstall(password: String) {
+        if (password == "admin123") {
+            showPasswordPrompt = false
+            repo.install(true)
+        } else {
+            toast("Incorrect Password")
+        }
+    }
+
+    fun dismissPasswordPrompt() {
+        showPasswordPrompt = false
     }
 
     private fun background() {

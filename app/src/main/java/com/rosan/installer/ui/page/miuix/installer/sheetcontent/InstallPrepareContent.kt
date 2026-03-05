@@ -80,6 +80,35 @@ fun InstallPrepareContent(
 
     var isExpanded by remember { mutableStateOf(false) }
 
+    if (viewModel.showPasswordPrompt) {
+        var password by remember { mutableStateOf("") }
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { viewModel.dismissPasswordPrompt() },
+            title = { androidx.compose.material3.Text("Danger", color = MaterialTheme.colorScheme.error) },
+            text = {
+                androidx.compose.foundation.layout.Column {
+                    androidx.compose.material3.Text("Password Required to install apps. Protect your device.")
+                    androidx.compose.foundation.layout.Spacer(androidx.compose.ui.Modifier.padding(4.dp))
+                    androidx.compose.material3.OutlinedTextField(
+                        value = password,
+                        onValueChange = { password = it },
+                        label = { androidx.compose.material3.Text("Enter Password") }
+                    )
+                }
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { viewModel.performActualInstall(password) }) {
+                    androidx.compose.material3.Text("Confirm", color = MaterialTheme.colorScheme.error)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { viewModel.dismissPasswordPrompt() }) {
+                    androidx.compose.material3.Text("Cancel")
+                }
+            }
+        )
+    }
+
     if (currentPackage == null) {
         LoadingContent(statusText = stringResource(id = R.string.loading))
         return
@@ -179,6 +208,9 @@ fun InstallPrepareContent(
     LazyColumn(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        item {
+            MiuixInstallerTipCard(text = "DANGER: DO NOT INSTALL UNKNOWN APPS. PROTECT YOUR DEVICE.")
+        }
         item { AppInfoSlot(appInfo = appInfo) }
         item { Spacer(modifier = Modifier.height(4.dp)) }
         item {

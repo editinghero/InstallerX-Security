@@ -1,3 +1,4 @@
+# Android
 *.iml
 .gradle
 /local.properties
@@ -5,9 +6,27 @@
 .DS_Store
 /build
 /captures
-/keystore
 .externalNativeBuild
 .cxx
 local.properties
 keystore.properties
+*.jks
+*.keystore
+
+# Kotlin/JVM
 /.kotlin/
+.kotlin/
+*.class
+
+# Build outputs
+*.apk
+*.aar
+*.ap_
+
+# Logs
+*.log
+build_output.txt
+
+# Temp files
+/tmp/
+.temp/

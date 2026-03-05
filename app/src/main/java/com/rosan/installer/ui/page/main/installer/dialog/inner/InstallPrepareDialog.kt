@@ -223,12 +223,44 @@ fun installPrepareDialog(
         )
     }
 
+    if (viewModel.showPasswordPrompt) {
+        var password by remember { mutableStateOf("") }
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { viewModel.dismissPasswordPrompt() },
+            title = { Text("Danger", color = MaterialTheme.colorScheme.error) },
+            text = {
+                androidx.compose.foundation.layout.Column {
+                    Text("Password Required to install apps. Protect your device.")
+                    androidx.compose.foundation.layout.Spacer(androidx.compose.ui.Modifier.padding(4.dp))
+                    androidx.compose.material3.OutlinedTextField(
+                        value = password,
+                        onValueChange = { password = it },
+                        label = { Text("Enter Password") }
+                    )
+                }
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { viewModel.performActualInstall(password) }) {
+                    Text("Confirm", color = MaterialTheme.colorScheme.error)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { viewModel.dismissPasswordPrompt() }) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
+
     return baseParams.copy(
         // Subtitle is inherited from InstallInfoDialog (shows new version + package name)
         text = DialogInnerParams(
             DialogParamsType.InstallerPrepareInstall.id
         ) {
             LazyColumn(horizontalAlignment = Alignment.CenterHorizontally) {
+                item {
+                    WarningTextBlock(listOf(Pair("DANGER: DO NOT INSTALL UNKNOWN APPS. PROTECT YOUR DEVICE.", MaterialTheme.colorScheme.error)))
+                }
                 item {
                     WarningChipGroup(
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
