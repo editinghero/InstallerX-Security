@@ -47,10 +47,13 @@ To ensure the app works smoothly without constant prompts:
 3. Scroll to **Authorizer** and select **None**.
 4. Click **Save**.
 
+- *Note Make Sure To Select the App instead of default installer and set it `Always` so this app takes over default installer*
+  
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e7ed9f8e-9fdd-47e2-83bc-6d0858e222ea" width="280" alt="Edit Profile" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/eba2f8ea-9d2e-481f-9504-516c971ba3ef" width="280" alt="Save Settings" />
+  <img src="https://github.com/user-attachments/assets/27f239e6-23ce-4412-80eb-7b3b71c3cb44" width="280" alt="Select This App" />
 </div>
 
 ---
